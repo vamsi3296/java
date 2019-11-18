@@ -4,6 +4,7 @@ import tdl.Declare;
 import tdl.readdata.readData2;
 import tdl.datawrite.dataWrite;
 import tdl.deletedata.deleteData;
+import tdl.updatedata.updateData;
 import tdl.AppendingObjectOutputStream;
 import java.util.Scanner;
 import java.util.Date;
@@ -62,6 +63,15 @@ public void addToDo(int i){
         addData.addToDo(i);
         break;
       case 2:
+        System.out.println("Select index of the todo to edit: ");
+        String index = String.valueOf(input.nextInt());
+        System.out.println("Click enter if you want to have the default value: ");
+        System.out.println("Description: ");
+        input.nextLine();
+        String description = input.nextLine();
+        System.out.println("Due Date");
+        String dueDate = input.nextLine();
+        updateData.updateD(index, description, dueDate);
         break;
       case 3:
         System.out.println("Index no. of the row to be deleted: ");
@@ -79,6 +89,7 @@ public void addToDo(int i){
 		} catch (IOException e) {
 			e.printStackTrace();
 		}*/
+    if ( choice != 4 )
     	i = readData2.dataRead(i = 0);
   }
 }
